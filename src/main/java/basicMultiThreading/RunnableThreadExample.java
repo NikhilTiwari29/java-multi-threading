@@ -1,0 +1,32 @@
+package basicMultiThreading;
+
+public class RunnableThreadExample {
+    public static void main(String[] args) {
+        Thread thread1 = new Thread(new Thread1());
+        Thread thread2 = new Thread(new Thread2());
+
+        thread1.start();
+        thread2.start();
+    }
+}
+
+class Thread1 implements Runnable {
+
+    @Override
+    public void run() {
+        for (int i = 0; i < 4; i++) {
+            System.out.println("Running Thread1: " + i);
+        }
+    }
+}
+
+class Thread2 implements Runnable {
+
+    @Override
+    public void run() {
+        for (int i = 0; i < 4; i++) {
+            System.out.println("Running Thread2: " + i);
+        }
+    }
+}
+
